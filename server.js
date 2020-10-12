@@ -10,6 +10,7 @@ const port = process.env.port || 8000
 
 app.use(cors())
 app.use(express.json())
+app.use('/users',require('User'))
 
 mongoose.connect('mongodb://localhost/users',{useNewUrlParser:true},() => {
     console.log('MongoDB databse connection successful')
